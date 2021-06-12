@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Twitch Leaderboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="tailwind.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+</head>
+<body style="background-image: url('bg')">
+<div class="min-h-screen py-6 flex flex-col justify-center">
+
+    <div class="sm:mx-auto relative text-white bg-blue-900 mt-10 py-4 bg-white shadow-lg sm:rounded-3xl" id="header">
+        <p class="text-5xl font-bold text-center">Veckans topplista</p>
+        <p id="resetText" class="text-center mt-4">Återställs varje söndag</p>
+    </div>
+
+    <div class="mt-12"></div>
+
+    {{range .}}
+    <div class="'mx-auto relative mt-4 shadow-lg sm:rounded-3xl text-center bg_{{ .Place }} entry">
+        <img class="p-4 float-left" src="https://minotar.net/avatar/{{ .UUID }}/32.png" alt="Avatar">
+        <p class="text-4xl mt-3">{{ .Name }} - {{ .XP }} XP</p>
+    </div>
+    {{end}}
+
+    <div class="mx-auto text-white mt-6 relative bg-blue-500 px-4 py-2 rounded-md">
+        <p id="ipText">Vill du vara med och tävla? Anslut till <b>minarty.fun</b>!</p>
+    </div>
+
+    <div class="mx-auto mt-32 relative">
+        <img id="brand" src="logo.png" alt="Minarty">
+    </div>
+</div>
+</body>
+</html>

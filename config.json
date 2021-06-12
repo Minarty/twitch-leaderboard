@@ -1,0 +1,10 @@
+{
+  "twitch": {
+    "rtmp_token": ""
+  },
+  "redis": {
+    "address": "localhost:6379",
+    "password": "bestpassword",
+    "key": "leaderboard"
+  }
+}
