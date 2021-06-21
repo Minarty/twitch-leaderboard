@@ -1,17 +1,8 @@
 # Twitch Leaderboard
 Simple application to livestream our leaderboard to Twitch (Swedish target audience).  
-This runs a simple local HTTP server with the leaderboard. To update the leaderboard, we use selenium running the chrome driver to take a screenshot.  
+This uses canvas to render a leaderboard image which will then be fed to FFMPEG running RTMP.
 
-The screenshot will be streamed with FFMPEG through RTMP.
-
-Quite tedious to set up, since all static files must be readily available as they are not packaged in the binary.
-
-This includes:
+Static files that must be in the same directory as the binary:
 - config.json
-- Everything in the ``site`` folder
-- bg folder with the backgrounds
-
-### Setting up selenium
-For selenium to work properly you need place the following inside the **selenium** directory.
-- Selenium server jar called "selenium.jar"
-- Chrome WebDriver called "chromedriver"
+- font.ttf - Font to draw all text with (we use RocknRoll One, omitted for copyright)
+- A "bg" folder with backgrounds (PNG or JPEG)
